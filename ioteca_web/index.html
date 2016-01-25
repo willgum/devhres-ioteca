@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	Hola HTML5<br>
+
+	<a ui-sref="test1">State 1</a>
+	<a ui-sref="categoria">Categoria</a>
+
+	<div ui-view></div>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="node_modules/angular-resource/angular-resource.min.js"></script>
+
+
+
+<script src="app/app.js"></script>
+<script src="app/router.js"></script>
+<script src="app/controllers/nomCtrl.js"></script>
+<script src="app/controllers/categoriaCtrl.js"></script>
+
+<script src="app/services/api.js"></script>
+
+
+</body>
+</html>
