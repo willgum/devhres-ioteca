@@ -1,4 +1,4 @@
-<div layout="column" ng-cloak class="md-inline-form">
+<div layout="column" >
   <md-content layout-padding>
     <div>
       <form name="userForm">
@@ -17,22 +17,23 @@
   </md-content>
 </div>
 
-<div ng-controller="nomCtrl">
-		<input type="text" ng-model="nombre">
-		{{ nombre }}
-		<a href="" ng-click="save()">Save</a>
+<md-content layout-padding ng-controller="nomCtrl">
+	<md-input-container class="md-block" flex-gt-sm>
+        <label>Name {{ nombre }}</label>
+        <input ng-model="nombre">
+    </md-input-container>
+		
+	<md-button class="md-raised md-primary" ng-click="save()">Save</md-button>
 
-		<md-button class="md-raised md-primary">Save</md-button>
-
-<md-button class="md-fab md-warn" aria-label="Use Android">
+	<md-button class="md-fab md-warn" aria-label="Use Android">
           <md-icon md-svg-src="img/icons/android.svg"></md-icon>
-        </md-button>
+    </md-button>
 
 
-		<table>
-			<tr ng-repeat="d in lista | filter: nombre">
-				<td> {{ d.nombre }}</td> 
-				<td> {{ d.codigo }}</td> 
-			</tr>
-		</table>
-	</div>
+	<table>
+		<tr ng-repeat="d in lista | filter: nombre">
+			<td> {{ d.nombre }}</td> 
+			<td> {{ d.codigo }}</td> 
+		</tr>
+	</table>
+</md-content>

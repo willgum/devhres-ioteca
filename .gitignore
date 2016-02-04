@@ -1,5 +1,6 @@
 *.pyc
 ve_ioteca
+*- copia*
 node_modules
 *node_modules
 ioteca_web\node_modules

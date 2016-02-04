@@ -1,0 +1,71 @@
+<div class="box">
+  <!-- Content Navbar -->
+  <div class="navbar md-whiteframe-z1 no-radius" ng-class="$state.current.data.theme ? $state.current.data.theme.primary : app.setting.theme.primary">
+    
+    <!-- Open side - Naviation on mobile -->
+    <md-button class="md-icon-button" hide-gt-sm aria-label="Toggle Menu" ng-click="openAside()">
+          <md-icon md-svg-src="img/icons/ic_menu_24px.svg"></md-icon>
+    </md-button>
+    <!-- / Open side - Naviation on mobile -->
+
+
+
+    <!-- GoBack - Back to parent if $state has the param 'child' -->
+    <a md-ink-ripple class="navbar-item pull-left" ng-click="goBack()" ng-show="$state.current.data.child" ><i class="mdi-navigation-arrow-back i-24"></i>--</a>
+    <!-- / GoBack - Back to parent if $state has the param 'child' -->
+
+
+    <!-- Page title - Bind to $state's title 
+    <div class="navbar-item pull-left h4" ng-bind="$state.current.data.section"></div> -->
+
+
+
+        
+
+      <div hide-xs hide-sm class="navbar-item pull-left h4" ng-bind="$state.current.data.section"></div>
+
+      <div hide-xs hide-sm class="navbar-item pull-left h4" ng-show="$state.current.data.section"> > </div>
+  
+     <div class="navbar-item pull-left h4" ng-bind="$state.current.data.page"> </div>
+    <!-- / Page title - Bind to $state's title-->
+
+
+
+    <!-- Common tools -->
+    <div class="pull-right" ui-view="navbar@"></div>
+    <!-- / Common tools -->
+
+
+    <!-- Search form -->
+    <div id="search" class="pos-abt w-full h-full" ng-show="app.search.show" ng-class="$state.current.data.theme ? $state.current.data.theme.primary : app.setting.theme.primary">
+      <div class="box">
+        <div class="box-col w-56 text-center">
+          <!-- hide search form -->
+          <a md-ink-ripple class="navbar-item inline" ng-click="app.search.show=false; app.search.content=''"><i class="mdi-navigation-arrow-back i-24"></i>cc</a>
+        </div>
+        <div class="box-col v-m">
+          <!-- bind to app.search.content -->
+          <input class="form-control input-lg no-bg no-border" placeholder="Search" ng-model="app.search.content">
+        </div>
+        <div class="box-col w-56 text-center">
+          <a md-ink-ripple class="navbar-item inline"><i class="mdi-av-mic i-24"></i>tt</a>
+        </div>
+      </div>
+    </div>
+    <!-- / Search form -->
+
+
+
+
+  </div>
+  <!-- / Content Navbar -->
+
+  <!-- Content -->
+  <div class="box-row">
+    <div class="box-cell">
+      <div class="box-inner padding" ui-view>
+      </div>
+    </div>
+  </div>
+  <!-- / Content -->
+</div>

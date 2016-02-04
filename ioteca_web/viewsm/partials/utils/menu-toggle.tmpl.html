@@ -1,0 +1,15 @@
+<li class="sub-menu" ng-class="{'active toggled':$state.includes('{{section.group}}')}">
+<a md-ink-ripple toggle-submenu>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon mdi-action-subject i-20"></i>
+        <span class="font-normal">{{section.name}}  </span>
+      </a>
+
+<ul class="nav nav-sub" ng-repeat="page in section.pages">
+  
+    <menu-link section="page"></menu-link>
+
+</ul>
+</li>
