@@ -59,17 +59,43 @@ app
       
     })
 
+    //==================================
+    // Mi app
+    //==================================
+    .state('ui', {
+   
+            url: '/ui',
+            views: {
+              '': {
+                templateUrl: 'viewsm/layout.html'
+              },
+              'aside': {
+                templateUrl: 'viewsm/aside.html'
+              },
+              'content': {
+                templateUrl: 'viewsm/content.html'
+              }
+            }
+      
+    })
 
-	.state("app.test1", {
+
+	.state("ui.test1", {
 		url:"/test1",
-    data : { section: 'App', page: 'Test 1' },
+    data : { section: 'App', page: 'Test 1 uno más' },
 		templateUrl:"app/views/test1.html"
 	})
 
-  .state("app.test2", {
+  .state("ui.test2", {
     url:"/test2",
     data : { page: 'Test 2' },
     templateUrl:"app/views/test2.html"
+  })
+
+  .state("ui.test3", {
+    url:"/test3",
+    data : { page: 'Test 3' },
+    templateUrl:"app/views/test3.html"
   })
 
 	

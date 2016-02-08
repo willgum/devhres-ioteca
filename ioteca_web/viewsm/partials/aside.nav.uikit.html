@@ -2,18 +2,129 @@
   <ul class="nav">
 
 
-<a ui-sref="app.test1">State 1</a><br>
-<a ui-sref="app.test2">State 2</a><br>
-<br><br><br><br>
-<a ui-sref="app.categoria">Categoria</a>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
+  <div ng-repeat="section in menu.sections">
+     <li class="nav-header m-v-sm hidden-folded">
 
-hola
+      <div ng-if="section.type === 'heading'">
+      {{section.name}}
+      </div>
 
+    </li>
 
+    <div ng-repeat="children in section.children">
+    <li ng-if="children.type === 'toggle'" ng-class="{'active toggled':$state.includes('{{children.group}}')}">
+      <a md-ink-ripple toggle-submenu>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon mdi-action-subject i-20"></i>
+        <span class="font-normal">{{children.name}}</span>
+      </a>
+      <ul class="nav nav-sub" ng-repeat="page in children.pages">
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="{{page.state}}">{{page.name}}</a>
+        </li>
+      </ul>
+    </li>
+    <li ui-sref-active="active" ng-if="children.type === 'link'">
+      <a md-ink-ripple ui-sref="{{children.state}}">
+        <span>{{children.name}}</span>
+      </a>
+    </li>
+    </div>
+
+    
+    <li ui-sref-active="active" ng-if="section.type === 'link'">
+      <a md-ink-ripple ui-sref="{{section.state}}">
+        <span>{{section.name}}</span>
+      </a>
+    </li>
+
+  </div>
+
+  <div>
+    <li class="nav-header m-v-sm hidden-folded">
+    <div>
+      UI Kits
+    </div>
+    </li>
+    <div>
+    <li ng-class="{'active toggled':$state.includes('app')}">
+      <a md-ink-ripple toggle-submenu>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon mdi-action-subject i-20"></i>
+        <span class="font-normal">Components</span>
+      </a>
+      <ul class="nav nav-sub">
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="app.test1">Arrow</a>
+        </li>
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="app.test2">Badge &amp; Label</a>
+        </li>
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="ui.component.button">Button</a>
+        </li>
+      </ul>
+    </li>
+    </div>
+    
+    <li ng-class="{active:$state.includes('ui.material')}">
+      <a md-ink-ripple toggle-submenu>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="pull-right up"><b class="badge bg-success">14</b></i>
+        <i class="icon mdi-image-flash-on i-20"></i>
+        <span class="font-normal">Material</span>
+      </a>
+      <ul class="nav nav-sub">
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="ui.material.button">Button</a>
+        </li>
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="ui.material.icon">Icon</a>
+        </li>
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="ui.material.color">Color</a>
+        </li>
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="ui.material.card">Card</a>
+        </li>
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="ui.material.form">Form</a>
+        </li>
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="ui.material.list">List</a>
+        </li>
+        <li ui-sref-active="active">
+          <a md-ink-ripple ui-sref="ui.material.ngmaterial">NgMaterial</a>
+        </li>
+      </ul>
+    
+
+  </div>
+
+    <li class="b-b b m-v-sm"></li>
+    <li ui-sref-active="active">
+      <a md-ink-ripple ui-sref="app.getting-started">
+        <span>Settings</span>
+      </a>
+    </li>
+    <li ui-sref-active="active">
+      <a md-ink-ripple ui-sref="app.test1x">
+        <span>Document</span>
+      </a>
+    </li>
+    <li class="m-b-sm">
+      <a md-ink-ripple href="../html">
+        <span>HTML Version</span>
+      </a>
+    </li>
+
+    </li>
 
   </ul>
 </nav>

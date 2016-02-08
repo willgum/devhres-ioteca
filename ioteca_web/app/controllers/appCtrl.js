@@ -1,8 +1,9 @@
 
 app
 
-.controller("appCtrl", function ($scope, $mdSidenav, $timeout, $rootScope, $window, $document, $log) {
+.controller("appCtrl", function ($scope, $mdSidenav, $timeout, $rootScope, $window, $document, $log, menuService) {
 
+  $scope.menu = menuService;
 	// config
       $scope.app = {
         name: 'AppName',
@@ -28,7 +29,7 @@ app
 
 
 
-	//$rootScope.$on('$stateChangeSuccess', openPage);
+	$rootScope.$on('$stateChangeSuccess', openPage);
 
     function openPage() {
         $scope.closeAside();

@@ -1,71 +1,73 @@
 <div class="box">
   <!-- Content Navbar -->
-  <div class="navbar md-whiteframe-z1 no-radius" ng-class="$state.current.data.theme ? $state.current.data.theme.primary : app.setting.theme.primary">
+  <md-toolbar md-theme="{{ dynamicTheme }}" class="navbar md-whiteframe-z1 no-radius md-hue-2" ng-class="$state.current.data.theme ? $state.current.data.theme.primary : app.setting.theme.primary">
     
-    <!-- Open side - Naviation on mobile -->
-    <md-button class="md-icon-button" hide-gt-sm aria-label="Toggle Menu" ng-click="openAside()">
+    <div class="md-toolbar-tools docs-toolbar-tools" tabIndex="-1">
+        <md-button class="md-icon-button" hide-gt-sm aria-label="Toggle Menu" ng-click="openAside()">
           <md-icon md-svg-src="img/icons/ic_menu_24px.svg"></md-icon>
-    </md-button>
-    <!-- / Open side - Naviation on mobile -->
+        </md-button>
+        <div layout="row" flex class="fill-height">
+          <h2 class="md-toolbar-item md-breadcrumb md-headline">
+            <span ng-if="$state.current.data.section">
+              <span hide-xs hide-sm hide-md ng-bind="$state.current.data.section">{{menu.currentSection.name}}</span>
+              <span  ng-if="$state.current.data.section" class="docs-menu-separator-icon" hide-xs hide-sm hide-md style="transform: translate3d(0, 1px, 0)">
+                <span class="md-visually-hidden">-</span>
+                <md-icon
+                    aria-hidden="true"
+                    md-svg-src="img/icons/ic_chevron_right_24px.svg"
+                    style="transform:translateY(-2px)"></md-icon>
+              </span>
+            </span>
+            <span class="md-breadcrumb-page" ng-bind="$state.current.data.page">{{menu.currentPage }}</span>
+          </h2>
 
+          <span flex></span> <!-- use up the empty space -->
 
+          <div class="md-toolbar-item docs-tools" layout="row">
+            <md-button class="md-icon-button"
+                       aria-label="Install with Bower"
+                       ng-if="!currentComponent.docs.length"
+                       target="_blank"
+                       ng-href="https://github.com/angular/bower-material">
+              <md-tooltip md-autohide>Install with Bower</md-tooltip>
+              <md-icon md-svg-src="img/icons/bower-logo.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button"
+                       aria-label="Install with NPM"
+                       ng-if="!currentComponent.docs.length"
+                       target="_blank"
+                       ng-href="https://www.npmjs.com/package/angular-material">
+              <md-tooltip md-autohide>Install with NPM</md-tooltip>
+              <md-icon md-svg-src="img/icons/npm-logo.svg" style="transform: scale(1.3)"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button"
+                       aria-label="View Source on Github"
+                       ng-if="!currentComponent.docs.length"
+                       target="_blank"
+                       ng-href="{{BUILDCONFIG.repository}}/{{menu.version.current.github}}">
+              <md-tooltip md-autohide>View Source on Github</md-tooltip>
+              <md-icon md-svg-src="img/icons/github.svg" style="color: rgba(255,255,255,0.97);"></md-icon>
+            </md-button>
 
-    <!-- GoBack - Back to parent if $state has the param 'child' -->
-    <a md-ink-ripple class="navbar-item pull-left" ng-click="goBack()" ng-show="$state.current.data.child" ><i class="mdi-navigation-arrow-back i-24"></i>--</a>
-    <!-- / GoBack - Back to parent if $state has the param 'child' -->
-
-
-    <!-- Page title - Bind to $state's title 
-    <div class="navbar-item pull-left h4" ng-bind="$state.current.data.section"></div> -->
-
-
-
-        
-
-      <div hide-xs hide-sm class="navbar-item pull-left h4" ng-bind="$state.current.data.section"></div>
-
-      <div hide-xs hide-sm class="navbar-item pull-left h4" ng-show="$state.current.data.section"> > </div>
-  
-     <div class="navbar-item pull-left h4" ng-bind="$state.current.data.page"> </div>
-    <!-- / Page title - Bind to $state's title-->
-
-
-
-    <!-- Common tools -->
-    <div class="pull-right" ui-view="navbar@"></div>
-    <!-- / Common tools -->
-
-
-    <!-- Search form -->
-    <div id="search" class="pos-abt w-full h-full" ng-show="app.search.show" ng-class="$state.current.data.theme ? $state.current.data.theme.primary : app.setting.theme.primary">
-      <div class="box">
-        <div class="box-col w-56 text-center">
-          <!-- hide search form -->
-          <a md-ink-ripple class="navbar-item inline" ng-click="app.search.show=false; app.search.content=''"><i class="mdi-navigation-arrow-back i-24"></i>cc</a>
-        </div>
-        <div class="box-col v-m">
-          <!-- bind to app.search.content -->
-          <input class="form-control input-lg no-bg no-border" placeholder="Search" ng-model="app.search.content">
-        </div>
-        <div class="box-col w-56 text-center">
-          <a md-ink-ripple class="navbar-item inline"><i class="mdi-av-mic i-24"></i>tt</a>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- / Search form -->
 
 
 
 
-  </div>
+  </md-toolbar>
   <!-- / Content Navbar -->
 
   <!-- Content -->
   <div class="box-row">
     <div class="box-cell">
-      <div class="box-inner padding" ui-view>
+
+      <div class="box-inner md-scroll-y flex padding" ui-view>
       </div>
     </div>
   </div>
   <!-- / Content -->
 </div>
+
+
