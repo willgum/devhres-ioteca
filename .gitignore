@@ -1,6 +1,5 @@
 *.pyc
-ve_ioteca
+ve_*
 *- copia*
 node_modules
 *node_modules
-ioteca_web\node_modules
