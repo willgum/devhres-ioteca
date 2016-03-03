@@ -29,25 +29,23 @@ app
             title: 'U.I.',
             type: 'toggle',
             group: 'ui',
-            pages: [
-                {
-                    title: 'Test 1 uno más',
-                    state: 'ui.test1',
-                    type: 'link'
-                }, {
-                    title: '2Test 2',
-                    state: 'ui.test2',
-                    type: 'link'
-                }, {
-                    title: 'Test 3',
-                    state: 'ui.test3',
-                    type: 'link'
-                }, {
-                    title: 'Test 4',
-                    state: 'ui.test4',
-                    type: 'link'
-                },
-            ]
+            pages: [{
+                title: 'Test 1 uno más',
+                state: 'ui.test1',
+                type: 'link'
+            }, {
+                title: '2Test 2',
+                state: 'ui.test2',
+                type: 'link'
+            }, {
+                title: 'Test 3',
+                state: 'ui.test3',
+                type: 'link'
+            }, {
+                title: 'Test 4',
+                state: 'ui.test4',
+                type: 'link'
+            }, ]
         }]
     });
 
@@ -66,7 +64,11 @@ app
                 title: 'Categoría',
                 state: 'catalogo.categoria',
                 type: 'link'
-            }]
+            },{
+                title: 'Autor',
+                state: 'catalogo.autor',
+                type: 'link'
+            }, ]
         }]
     });
 

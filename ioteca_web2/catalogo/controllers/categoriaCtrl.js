@@ -6,7 +6,7 @@ app
     $scope.categoria={};
 
     $scope.list = function() {
-        API.Categoria.list().$promise.then(function(r) {
+        API.Categoria.list({query:$scope.query}).$promise.then(function(r) {
             $scope.lista = r;
         }, function(err) {
             console.log("Err " + err);
@@ -99,7 +99,7 @@ app
         if ($window.confirm("Seguro?")) {
             API.Categoria.delete({ id: d.id }).$promise.then(function(r) {
                 console.log("r: " + r);
-                list();
+                $scope.list();
             }, function(err) {
                 console.log("Err " + err);
             });

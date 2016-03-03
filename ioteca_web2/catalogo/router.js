@@ -26,6 +26,15 @@ app
     })
 
     //==================================
+    // url ct
+    //==================================
+    .state("catalogo.ct", {
+        url: "/ct",
+        data: { section: 'Catálogo', page: 'Document' },
+        templateUrl: "app/views/pages/document.html"
+    })
+
+    //==================================
     // url categoria
     //==================================
     .state("catalogo.categoria", {
@@ -35,11 +44,11 @@ app
     })
 
     //==================================
-    // url categoria
+    // url autor
     //==================================
-    .state("catalogo.ct", {
-        url: "/ct",
-        data: { section: 'Catálogo', page: 'Document' },
-        templateUrl: "app/views/pages/document.html"
+    .state("catalogo.autor", {
+        url: "/autor",
+        data: { section: 'Catálogo', page: 'Autor' },
+        templateUrl: "catalogo/views/autor/index.html"
     });
 });

@@ -1,6 +1,7 @@
 from django.db import models
 # from django.utils import timezone
-#magwi
+# magwi
+# asullom
 
 
 class Autor(models.Model):

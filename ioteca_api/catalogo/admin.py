@@ -12,8 +12,15 @@ class CategoriaAdmin(admin.ModelAdmin):
     search_fields = ("nombre", "codigo",)
     list_per_page = 3
 
+
+class AutorAdmin(admin.ModelAdmin):
+    """docstring for AutorAdmin"""
+    list_display = ("nombre", "direccion", "fecha_nac")
+    search_fields = ("nombre", "direccion",)
+    list_per_page = 2
+
 admin.site.register(Categoria, CategoriaAdmin)
-admin.site.register(Autor)
+admin.site.register(Autor, AutorAdmin)
 
 
 class LibroAdmin(admin.ModelAdmin):

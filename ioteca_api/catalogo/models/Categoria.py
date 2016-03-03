@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here. Ctrl Sift r
+# e
 
 
 class Categoria(models.Model):

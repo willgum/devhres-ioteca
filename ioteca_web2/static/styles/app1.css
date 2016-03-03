@@ -693,3 +693,11 @@ md-dialog.main {
   max-height: 95%;
 }
 
+
+table td .md-button,
+table th .md-button{
+  line-height: 10px;
+      width: 10px;
+      height: 10px; 
+    transform: scale(0.8);
+}
