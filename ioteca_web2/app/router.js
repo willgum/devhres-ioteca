@@ -24,7 +24,7 @@ app
 // app main routers
 //==================================
 .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/main");
+    $urlRouterProvider.otherwise("/apps");
 
     $stateProvider
 
@@ -46,14 +46,14 @@ app
     })
 
     //==================================
-    // Main page
+    // Apps page (Main)
     //==================================
-    .state("main", {
-        url: "/main",
-        data: { page: 'Main page' },
+    .state("apps", {
+        url: "/apps",
+        data: { page: 'Apps page' },
         views: {
             '': {
-                templateUrl: "app/views/pages/main.tmpl.html"
+                templateUrl: "app/views/pages/apps.tmpl.html"
             },
         }
     })

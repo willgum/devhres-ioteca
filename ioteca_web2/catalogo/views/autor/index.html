@@ -33,49 +33,55 @@
                     </md-card-icon-actions>
                 </md-card-actions>
                 <md-divider></md-divider>
-                <table md-table data-md-row-select="" mi-table>
-                    <thead md-head>
-                        <tr md-row>
-                            <th md-column>#</th>
-                            <th md-column md:order:by="name">nombre</th>
-                            <th md-column>direccion</th>
-                            <th md-column>fecha_nac</th>
-                            <th md-column>created_at</th>
-                            <th md-column>updated_at</th>
-                            <th md-column colspan='2' align='center'>acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody md-body>
-                        <tr md-row ng-repeat="d in lista">
-                            <td md-cell> {{ d.num }}</td>
-                            <td md-cell> {{ d.nombre }}</td>
-                            <td md-cell> {{ d.direccion }}</td>
-                            <td md-cell> {{ d.fecha_nac }}</td>
-                            <td md-cell> {{ d.created_at }}</td>
-                            <td md-cell> {{ d.updated_at }}</td>
-                            <td md-cell>
-                                <md-button class="md-icon-button" aria-label="Edit" ng-click="sel(d)">
-                                    <md-tooltip md-autohide>Edit {{ d.nombre }}</md-tooltip>
-                                    <ng-md-icon icon="edit" aria-label="Edit"></ng-md-icon>
-                                </md-button>
-                            </td>
-                            <td md-cell>
-                                <md-button class="md-icon-button" aria-label="delete" ng-click="delete(d)">
-                                    <md-tooltip md-autohide>Delete {{ d.nombre }}</md-tooltip>
-                                    <ng-md-icon icon="delete" aria-label="delete"></ng-md-icon>
-                                </md-button>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="10">
-                                <mi-pagination page="options.page" pages="options.pages" next="options.next" previous="options.previous" rango="options.range" activado="myactive" accion="list(page)">
-                                </mi-pagination>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
+                <md-table-container>
+                    <table md-table data-md-row-select="" mi-table>
+                        <thead md-head>
+                            <tr md-row>
+                                <th md-column>#</th>
+                                <th md-column md:order:by="name">nombre</th>
+                                <th md-column>direccion</th>
+                                <th md-column>fecha_nac</th>
+                                <th md-column>created_at</th>
+                                <th md-column>updated_at</th>
+                                <th md-column colspan='2' align='center'>acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody md-body>
+                            <tr md-row ng-repeat="d in lista">
+                                <td md-cell> {{ d.num }}</td>
+                                <td md-cell> {{ d.nombre }}</td>
+                                <td md-cell> {{ d.direccion }}</td>
+                                <td md-cell> {{ d.fecha_nac }}</td>
+                                <td md-cell> {{ d.created_at }}</td>
+                                <td md-cell> {{ d.updated_at }}</td>
+                                <td md-cell>
+                                    <md-button class="md-icon-button" aria-label="Edit" ng-click="sel(d)">
+                                        <md-tooltip md-autohide>Edit {{ d.nombre }}</md-tooltip>
+                                        <ng-md-icon icon="edit" aria-label="Edit"></ng-md-icon>
+                                    </md-button>
+                                </td>
+                                <td md-cell>
+                                    <md-button class="md-icon-button" aria-label="delete" ng-click="delete(d)">
+                                        <md-tooltip md-autohide>Delete {{ d.nombre }}</md-tooltip>
+                                        <ng-md-icon icon="delete" aria-label="delete"></ng-md-icon>
+                                    </md-button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <md-table-pagination>
+                    <table>
+                        <tfoot>
+                            <tr>
+                                <td colspan="10">
+                                    <mi-pagination page="options.page" pages="options.pages" next="options.next" previous="options.previous" rango="options.range" activado="myactive" accion="list(page)">
+                                    </mi-pagination>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </md-table-pagination>
             </md-card>
         </div>
     </md-content>

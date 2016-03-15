@@ -1,6 +1,7 @@
 app
 
-    .controller("appCtrl", function($scope, $mdSidenav, $timeout, $rootScope, $window, $document, $log, menuService) {
+    .controller("appCtrl", function($scope, $mdSidenav, $timeout, $rootScope, $window, 
+        $document, $log, menuService, $mdBottomSheet, $mdToast) {
 
     $scope.menu = menuService;
     // config
@@ -49,4 +50,40 @@ app
     };
 
 
+
+
+  $scope.showGridBottomSheet = function() {
+    $scope.alert = '';
+    $mdBottomSheet.show({
+      templateUrl: 'app/views/partials/bottom-sheet-grid-template.html',
+      controller: 'GridBottomSheetCtrl',
+      clickOutsideToClose: true
+    }).then(function(clickedItem) {
+      $mdToast.show(
+            $mdToast.simple()
+              .textContent(clickedItem['name'] + ' clicked!')
+              .position('top right')
+              .hideDelay(1500)
+          );
+    });
+  };
+
+
 });
+
+app
+.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
+  $scope.items = [
+    { name: 'Hangoutx name', icon: 'hangout' },
+    { name: 'xMail name', icon: 'mail' },
+    { name: 'Message name', icon: 'message' },
+    { name: 'Copy name', icon: 'copy2' },
+    { name: 'Facebook name', icon: 'facebook' },
+    { name: 'Twitter name', icon: 'twitter' },
+  ];
+  $scope.listItemClick = function($index) {
+    var clickedItem = $scope.items[$index];
+    $mdBottomSheet.hide(clickedItem);
+  };
+})
+;

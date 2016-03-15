@@ -30,6 +30,7 @@
                     </md-card-icon-actions>
                 </md-card-actions>
                 <md-divider></md-divider>
+                <md-table-container>
                 <table md-table data-md-row-select="">
                     <thead md-head>
                         <tr md-row>
@@ -41,9 +42,9 @@
                     </thead>
                     <tbody md-body>
                         <tr md-row ng-repeat="d in lista">
-                            <td md-cell> {{ d.num }}</td>
-                            <td md-cell> {{ d.nombre }}</td>
-                            <td md-cell> {{ d.codigo }}</td>
+                            <td md-cell> {{ d.num }} </td>
+                            <td md-cell> {{ d.nombre }} </td>
+                            <td md-cell> {{ d.codigo }} </td>
                             <td md-cell>
                                 <md-button class="md-icon-button" aria-label="Edit" ng-click="sel(d)">
                                 <md-tooltip md-autohide>Edit {{ d.codigo }}</md-tooltip>
@@ -59,6 +60,7 @@
                         </tr>
                     </tbody>
                 </table>
+                </md-table-container>
             </md-card>
         </div>
     </md-content>
