@@ -1,0 +1,24 @@
+Backend
+==========
+cd ioteca
+ioteca>virtualenv ve_ioteca
+ioteca>ve_ioteca\Scripts\activate
+
+(ve_ioteca)ioteca>cd ioteca_api
+(ve_ioteca)ioteca\ioteca_api>pip install -r reqs.txt
+
+(ve_ioteca)ioteca\ioteca_api>manage.py runserver
+
+
+
+
+Front end
+=========
+cd ioteca\ioteca_web2
+
+ioteca\ioteca_web2>npm install
+ioteca\ioteca_web2>cd..
+ioteca>npm install
+ioteca>gulp serve
+
+Se recomienda pegar gulpfile.js y package.json en la raiz para ampliar el sitio público

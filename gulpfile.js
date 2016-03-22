@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 
-gulp.task('run', function() {
+gulp.task('serve', function() {
     connect.server({
         port: 4000,
         host: 'localhost'

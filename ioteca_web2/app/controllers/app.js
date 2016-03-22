@@ -1,6 +1,6 @@
 app
 
-    .controller("appCtrl", function($scope, $mdSidenav, $timeout, $rootScope, $window, 
+    .controller("AppCtrl", function($scope, $mdSidenav, $timeout, $rootScope, $window,
         $document, $log, menuService, $mdBottomSheet, $mdToast) {
 
     $scope.menu = menuService;

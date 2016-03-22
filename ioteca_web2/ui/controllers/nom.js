@@ -1,6 +1,6 @@
 app
 
-    .controller("nomCtrl", function($scope) {
+    .controller("NomCtrl", function($scope) {
     //$scope.nombre = "Juan Perez";
     $scope.save = function() {
         console.log("Hola " + $scope.nombre);
