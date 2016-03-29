@@ -1,6 +1,6 @@
 app
 
-    .controller("CategoriaCtrl", function($scope, API, $window, $mdDialog) {
+    .controller("categoriaCtrl", function($scope, API, $window, $mdDialog) {
 
     $scope.lista = [];
     $scope.categoria={};

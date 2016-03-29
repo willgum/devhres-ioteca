@@ -1,7 +1,7 @@
 app
 
-    .factory("API", function($resource, config) {
-    var url = config.catalogoUrl;
+    .factory("API", function($resource) {
+    var url = "http://localhost:8000/api/catalogo/";
     return {
         Categoria: $resource(url + "categorias/:id/", { 'id': '@id' }, {
             "update": { method: 'PUT' },

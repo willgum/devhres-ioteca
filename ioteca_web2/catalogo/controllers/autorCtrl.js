@@ -1,6 +1,6 @@
 app
 
-    .controller("AutorCtrl", function($scope, API, $window, $mdDialog) {
+    .controller("autorCtrl", function($scope, API, $window, $mdDialog) {
 
     $scope.lista = [];
     $scope.autor = {};
